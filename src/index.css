@@ -1,0 +1,34 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes slide {
+  0% {
+    transform: translateX(0); /* Start at the beginning */
+  }
+  100% {
+    transform: translateX(-50%); /* Slide left by half of the total width */
+  }
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite; /* Duration of the sliding */
+  display: flex; /* Ensure items are in a row */
+  width: 200%; /* Adjust width to fit all items twice (for duplication) */
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Hide overflow to only show items in view */
+}
+
+.container:hover .animate-slide {
+  animation-play-state: paused; /* Pause the animation on hover */
+}
+
+.item {
+  margin-right: 20px; /* Space between items */
+}
+
